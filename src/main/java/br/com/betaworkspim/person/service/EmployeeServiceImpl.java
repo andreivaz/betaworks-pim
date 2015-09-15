@@ -9,11 +9,13 @@ import br.com.betaworkspim.person.dao.IEmployeeDAO;
 import java.util.List;
 import org.hibernate.exception.DataException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 /**
  *
  * @author andreivaz
  */
+@Service
 public class EmployeeServiceImpl implements IEmployeeService{
     
     @Autowired

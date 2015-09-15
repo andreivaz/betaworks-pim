@@ -24,19 +24,19 @@ public class EmployeeDAOTest {
     
     EmployeeDAOImpl employeeDao = new EmployeeDAOImpl();  
     
-    @Test
-    public void addEmployeeTest() {
-        Employee e = new Employee();
-        e.setAddress("Endereco 1");
-        e.setBirthDate(null);
-        e.setCpf("111111111111");
-        e.setEmail("andrei@email.com");
-        e.setName("Andrei");
-        e.setRg("11111111111");
-        e.setTelephone("1112222222");
-        employeeDao.addEmployee(e);
-        assertEquals(e, employeeDao.getEmployee(e));
-    }
+//    @Test
+//    public void addEmployeeTest() {
+//        Employee e = new Employee();
+//        e.setAddress("Endereco 1");
+//        e.setBirthDate(null);
+//        e.setCpf("111111111111");
+//        e.setEmail("andrei@email.com");
+//        e.setName("Andrei");
+//        e.setRg("11111111111");
+//        e.setTelephone("1112222222");
+//        employeeDao.addEmployee(e);
+//        assertEquals(e, employeeDao.getEmployee(e));
+//    }
     
    
     
