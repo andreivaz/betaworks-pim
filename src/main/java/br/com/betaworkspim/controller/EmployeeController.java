@@ -6,6 +6,8 @@
 package br.com.betaworkspim.controller;
 
 import br.com.betaworkspim.person.service.IEmployeeService;
+import javax.transaction.Transactional;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -15,8 +17,10 @@ import org.springframework.web.servlet.ModelAndView;
  * @author andreivaz
  */
 @Controller
+@Transactional
 public class EmployeeController {
     
+    @Autowired
     private IEmployeeService employeeService;
 
     @RequestMapping("/employees")
@@ -24,14 +28,11 @@ public class EmployeeController {
         return "views/employee/employees";
     }
     
-    
     public ModelAndView getEmployeesList(){
         ModelAndView model = new ModelAndView("employeesList");
         model.addObject("employeesList", employeeService.getEmployeesList());
         return model;
     }
-    
-    
     
     public IEmployeeService getEmployeeService() {
         return employeeService;

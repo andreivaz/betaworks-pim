@@ -8,6 +8,7 @@ package br.com.betaworkspim.person.service;
 import br.com.betaworkspim.person.dao.IEmployeeDAO;
 import java.util.List;
 import org.hibernate.exception.DataException;
+import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  *
@@ -15,6 +16,7 @@ import org.hibernate.exception.DataException;
  */
 public class EmployeeServiceImpl implements IEmployeeService{
     
+    @Autowired
     private IEmployeeDAO employeeDAO;
     
     @Override

@@ -26,6 +26,7 @@ public class EmployeeStatus implements Serializable {
     
     private Double  salary;
     private String  position;
+    private Integer permission;
     private Double  bonus;
 
     public EmployeeStatus() {
@@ -71,6 +72,13 @@ public class EmployeeStatus implements Serializable {
     public void setBonus(Double bonus) {
         this.bonus = bonus;
     }
-    
+
+    public Integer getPermission() {
+        return permission;
+    }
+
+    public void setPermission(Integer permission) {
+        this.permission = permission;
+    }
     
 }
