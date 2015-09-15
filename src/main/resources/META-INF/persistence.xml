@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
   <persistence-unit name="betaworks-pimPU" transaction-type="RESOURCE_LOCAL">
-    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <provider>org.hibernate.ejb.HibernatePersistence</provider>
     <class>br.com.betaworkspim.person.model.Customer</class>
     <class>br.com.betaworkspim.person.model.Employee</class>
     <class>br.com.betaworkspim.person.model.EmployeeStatus</class>
@@ -12,11 +12,17 @@
     <class>br.com.betaworkspim.product.model.Supplier</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
-        <property name="hibernate.dialect" 
-                  value="org.hibernate.dialect.PostgreSQLDialect" />
+<!--        <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/betaworks-pim"/>
+        <property name="javax.persistence.jdbc.user" value="postgres"/>
+        <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
+        <property name="javax.persistence.jdbc.password" value="postgres"/>-->
+        
+        <!--  propriedades do hibernate -->
+        <property name="hibernate.dialect"  value="org.hibernate.dialect.PostgreSQLDialect" />
         <property name="hibernate.show_sql" value="true" />
         <property name="hibernate.format_sql" value="true" />
-        <property name="hibernate.hbm2ddl.auto" value="create" /> 
+         <!--  atualiza o banco, gera as tabelas se for preciso -->
+        <property name="hibernate.hbm2ddl.auto" value="update" />
     </properties>
   </persistence-unit>
 </persistence>

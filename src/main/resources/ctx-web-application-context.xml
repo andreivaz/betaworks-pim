@@ -13,6 +13,7 @@
     <context:component-scan base-package="br.com.betaworkspim" />
     <mvc:resources mapping="/resources/**" location="/resources/"/>
     <mvc:annotation-driven />
+    <context:annotation-config />
     
     <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/views/"/>
@@ -22,27 +23,25 @@
     <mvc:interceptors>
         <bean class = "br.com.betaworkspim.interceptor.AuthInterceptor"/>
     </mvc:interceptors>-->
-    
+   
     <bean id="BetaWorksDataSource" class="org.apache.commons.dbcp.BasicDataSource">
-        <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/betaworks-pim"/>
-        <property name="javax.persistence.jdbc.user" value="postgres"/>
-        <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
-        <property name="javax.persistence.jdbc.password" value="postgres"/>
-        <property name="javax.persistence.schema-generation.database.action" value="create"/>
+        <property name="url" value="jdbc:postgresql://localhost:5432/betaworks-pim"/>
+        <property name="username" value="postgres"/>
+        <property name="driverClassName" value="org.postgresql.Driver"/>
+        <property name="password" value="postgres"/>
     </bean>
     
-    <bean id="entityManagerFactory" 
-          class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+    <bean id="entityManagerFactory"  class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
         <property name="dataSource" ref="BetaWorksDataSource" />
         <property name="jpaVendorAdapter">
             <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter"/>
         </property>
     </bean>
     
-    <bean id="transactionManager" 
-          class="org.springframework.orm.jpa.JpaTransactionManager">
+    <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
         <property name="entityManagerFactory" ref="entityManagerFactory"/>
     </bean>
+    <!--
     
      <bean id="employeeDAO" class="br.com.betaworkspim.person.dao.EmployeeDAOImpl" scope="singleton">
         <property name="manager" ref="entityManagerFactory"/>
@@ -50,5 +49,5 @@
     <bean id="employeeService" class="br.com.betaworkspim.person.service.EmployeeServiceImpl" scope="singleton">
         <property name="employeeDAO" ref="employeeDAO"/>
     </bean>
-       
+       -->
 </beans>

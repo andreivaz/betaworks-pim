@@ -22,4 +22,14 @@ public class EmployeeServiceImpl implements IEmployeeService{
         return employeeDAO.getEmployeeList();
     }
     
+    
+    
+    public IEmployeeDAO getEmployeeDAO() {
+        return employeeDAO;
+    }
+
+    public void setEmployeeDAO(IEmployeeDAO employeeDAO) {
+        this.employeeDAO = employeeDAO;
+    }
+    
 }

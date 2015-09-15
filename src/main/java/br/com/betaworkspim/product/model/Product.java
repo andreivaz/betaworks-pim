@@ -9,8 +9,8 @@ import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 /**
  *
@@ -22,7 +22,7 @@ public class Product implements Serializable {
     @Id
     @GeneratedValue
     private Integer productId;
-    @ManyToMany
+    @OneToOne
     private Stock stockId;
     
     private String productType;

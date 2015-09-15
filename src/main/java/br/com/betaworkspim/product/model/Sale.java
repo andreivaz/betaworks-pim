@@ -13,6 +13,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -26,11 +28,11 @@ public class Sale implements Serializable{
     @Id
     @GeneratedValue
     private Integer saleId;
-    @ManyToMany
+    @OneToOne
     private Product productId;
-    @ManyToMany
+    @OneToOne
     private Employee employeeId;
-    @ManyToMany
+    @OneToOne
     private Customer customerId;
     
     @Temporal(TemporalType.DATE)

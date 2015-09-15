@@ -24,9 +24,9 @@ public class Employee implements Serializable{
     @Id
     @GeneratedValue
     private Integer employeeId;
-    @OneToOne(mappedBy = "employeeID")
+    @OneToOne
     private Username userId;
-    @OneToOne(mappedBy = "employeeID")
+    @OneToOne
     private EmployeeStatus employeeStatusId;
     
     private String  name;

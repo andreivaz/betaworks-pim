@@ -9,8 +9,6 @@ import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import org.hibernate.validator.constraints.Email;
-import org.hibernate.validator.constraints.br.CPF;
 
 /**
  *
@@ -23,12 +21,10 @@ public class Customer implements Serializable{
     @GeneratedValue
     private Integer customerId;
     
-    @CPF
     private String cpf;
     private String name;
     private Integer age;
     private String address;
-    @Email
     private String email;
     
     public Customer() {

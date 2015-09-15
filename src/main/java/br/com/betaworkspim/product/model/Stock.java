@@ -10,6 +10,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToOne;
 
 /**
  *
@@ -21,7 +22,7 @@ public class Stock implements Serializable{
     @Id
     @GeneratedValue
     private Integer stockId;
-    @ManyToMany
+    @OneToOne
     private Product productId;
     
     private int quantity;
