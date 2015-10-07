@@ -41,6 +41,7 @@
     <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
         <property name="entityManagerFactory" ref="entityManagerFactory"/>
     </bean>
+    <tx:annotation-driven/>
     <!--
     
      <bean id="employeeDAO" class="br.com.betaworkspim.person.dao.EmployeeDAOImpl" scope="singleton">
